@@ -1,0 +1,660 @@
+:root {
+  --primary: #402857;
+  --secondary: #B87BA7;
+  --header: #382352;
+  --gradient:  linear-gradient(to bottom, rgba(77, 77, 77, 0.36) 0%, rgba(63,52,82,0.62) 50%, rgba(64,40,87,1) 100%);
+  --gradient2:  linear-gradient(to bottom, rgba(77, 77, 77, 0.36) 0%, rgba(63,52,82,0.62) 100%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+padding: 0;
+margin: 0;  
+scroll-behavior: smooth;
+
+}
+
+a{
+  
+  text-decoration: none;
+}
+li{
+  list-style-type: none; 
+}
+.book-list-container .title-container h3,
+.book-of-day article h1{
+  font-family: 'Poppins',sans-serif;
+}
+body {
+ max-width: 1440px;
+ font-family: "Quicksand", sans-serif;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+}
+/* HEADER */
+header{
+
+
+}
+header .logo-container{
+display: flex;
+justify-content: center;
+ align-items: center;
+gap: 5px;
+padding: .5em;
+}
+header .navigation-container{
+  z-index: 100;
+ align-items: center;
+  width:100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--header);
+  padding:.5em;
+
+}
+header .navigation-container .logo-text{
+color: var(--secondary);
+}
+
+header .logo{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+header nav ul{
+  display: flex;
+
+  gap: 25px;
+}
+header nav ul li:first-child,
+header nav ul li:hover
+{
+
+}
+header nav ul a{
+  font-weight: bold;
+  border-radius: 20px;
+  padding: .3em .8em;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+header nav ul .sign-up-button{
+  border: 1px solid var(--secondary);
+}
+header nav ul a:hover{
+  background-color: var(--secondary);
+  color: var(--primary);
+
+}
+section.jumbotron::before{z-index: 1;
+  background: rgb(0,0,0);
+  background: var(--gradient);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+content: "";
+}
+main{
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--secondary);
+  padding:2em 0;
+}
+main section{
+margin-bottom: 1em;
+}
+main .right-area{
+  flex-basis: 25%;
+
+}
+main .left-area{
+  margin-left: 1em;
+  flex-basis: 70%;
+overflow: hidden;
+}
+
+section{
+  background-color: var(--secondary);
+}
+section.jumbotron{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background-image: url('/img/jumbotron.png');
+  width: 100%;
+  height:80vh;
+  color: white;
+}
+section.jumbotron article {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+section.jumbotron article h3{
+  font-weight: normal;
+}
+.sigin-container{
+  padding: unset;
+  align-items: center;
+  background-color: white;
+
+
+  z-index: 2;
+  color: var(--primary);  
+  padding: 1em;
+}
+.sigin-container p{
+text-align: center;
+}
+.sigin-container li a{
+color: white ;
+font-weight: bold;
+display: flex;
+align-items: center;
+
+}
+.sigin-container li:first-child{
+  background-color:#434445;
+}
+.sigin-container li:nth-child(2){
+  background-color:#1DA1F2;
+}
+.sigin-container li:nth-child(3){
+  background-color:#1877F2;
+}
+.sigin-container li:last-child a{
+  color:#333 !important;
+}
+.sigin-container li{
+  margin-bottom: 1em;
+  padding:.5em 1em;
+  display: flex;
+  align-items: center;
+}
+.sigin-container i{
+  margin-right: 10px;
+}
+
+/* BOOK OF THE DAY */
+.book-of-day {
+  display: flex;
+  align-items: center;
+justify-content: space-around;
+  background-color: var(--primary);
+padding: 3em;
+color: var(--secondary);
+
+}
+
+/*-------- AREA KIRI -----*/
+.book-of-day article {
+  width: 50%;
+
+}
+.book-of-day article .title-container{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 2em;
+
+}
+
+.book-of-day article h1{
+
+font-size: 45px;
+  text-transform: uppercase;
+  font-weight: bolder;
+/* line-height: 1; */
+}
+
+.book-of-day article p.writer{
+  font-weight: bold;
+}
+.book-of-day article p.synopsis{
+line-height: 1.6;
+}
+
+/*-------- AREA KANAN -----*/
+.book-of-day figure {
+  position: relative;
+  top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.book-of-day figure figcaption{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.book-of-day figure img{
+width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.book-list-container {
+  color: var(--primary);
+ display: flex;
+  flex-wrap: wrap;
+}
+
+ 
+  .book-list-container .title-container{
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+width: 95%;
+  }
+  .book-list-container .title-container a:hover{
+    color: #333;
+  }
+  .book-list-container .title-container i{
+    font-size: 1.5em;
+  }
+  .book-list-container .title-container a{
+    overflow: hidden;
+    border-radius:20px;
+    gap: 5px;
+    color: var(--header);
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .book-list{
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+  }
+  .book-list .book {
+    transition: all .4s ease;
+    width: 200px;
+    height:250px;
+    overflow: hidden;
+  }
+
+  .book-list .book img{
+    transition: all .4s ease;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+  .book-list .book::before{
+    z-index: 2;
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+background:var(--gradient);
+  }
+  .book-list .book:hover img{
+    transition: all .4s ease;
+    scale: 1.2;
+  }
+  .book-list .book:hover::before{
+    background: var(--gradient2);
+  }
+  .book-list .book{
+    position: relative;
+  }
+  .book-list h3{
+    font-size: 1em;
+    font-weight: 400;
+
+    color: white;
+    z-index: 2;
+    position: absolute;
+bottom: 10px;
+left: 10px;
+  }
+
+/* RIGHT AREA */
+.popular-container .title-container {
+  color: var(--primary);
+}
+.popular-container .title-container i{
+width: 13px;
+height: 13px;
+}
+.popular-container .title-container a{
+  font-size: 13px;
+  font-weight: bold;
+display: flex;justify-content: center;
+align-items: center;
+gap: 5px;
+}
+
+.popular-container .title-container{
+
+display: flex;
+justify-content: space-between;
+gap: 1em;
+}
+
+.right-area{
+  display: flex; 
+  flex-direction: column;
+}
+  .right-area .popular-list{
+    margin-top: 1em;
+    background-color: var(--primary);
+    padding: 1em 1.3em;
+    border-radius: 5px;
+  }
+  .right-area .popular-list span{
+    position: absolute;
+    left: -1em;
+    background-color: var(--primary);
+    padding:.3em .7em;
+    border:1px solid var(--secondary);
+    
+    color: var(--secondary);
+  }
+  .right-area .popular-list .list{
+    margin-bottom: 1em;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+    padding: 1em 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .right-area .popular-list .list:hover {
+    border:3px solid var(--secondary)
+  ;
+  transition: all .4s ease;
+  }
+  .right-area .popular-list .list {
+  transition: all .4s ease;
+    
+    border:3px solid #4e3e63;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary);
+  }
+  .right-area .popular-list  .title p{
+    font-size: .8em;
+  }
+  .right-area .popular-list  figure{
+    display: flex;
+    align-items: center; gap: 10px;
+  }
+  .right-area .popular-list  figcaption{
+    color: var(--primary);
+    padding:5px 9px ;
+    font-size:.8em;
+    border-radius: 15px;
+    font-weight: b;
+    background-color: white;
+    align-items: center;
+  }
+  .right-area .popular-list .list img{
+    width: 50px;
+    height: 50px;
+object-fit: cover;  }
+.popular-container .title-container a i{
+  color: var(--primary);
+}
+ footer{
+  min-height: 40vh;
+  position: relative;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+ }
+
+ footer div ul{
+
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+ }
+ footer div ul a{
+  color: var(--secondary);
+justify-content: center;
+}
+ footer article{
+  width: 30%;
+  margin-bottom: 1em;
+ }
+ .copyright{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  padding:.4em;
+  font-weight: 600;
+left: 0;
+  background-color: var(--secondary);
+}
+.to-top i{
+  color: var(--primary);
+  rotate: -90deg;
+}
+@keyframes anime {
+  
+  0% {top: 0;}
+  30% {top:20px}
+  90% {top:-px}
+  100% {top: 0px;}
+}
+.to-top:hover i{
+  animation: anime;
+  animation-name: anime;
+  animation-duration: .5s;
+}
+.to-top:hover i{
+  position: relative;
+color: var(--secondary);
+
+}
+
+.to-top:hover{
+  background-color: var(--primary);
+border:2px solid var(--secondary);
+}
+
+.to-top{
+  overflow: hidden;
+  position: absolute;
+  top: -1.5em;
+  background-color: var(--secondary);
+  border:2px solid var(--primary);
+  padding: .9em 1em;
+  border-radius: 25px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+footer ul li a:hover{
+  color: white;
+  transition: all .3s ease;
+}
+
+@media screen and (max-width: 800px) {
+
+.book-of-day article h1,
+.book-of-day article p
+{
+  align-self: center;
+}
+.book-of-day article h1
+{
+  font-size:20px;
+  margin-top: 1em;
+}
+.book-of-day article{
+text-align: center;
+ width: 100%;
+  order:2;
+  margin-top: 5em;
+}
+.book-of-day figure{
+  order: -1;
+}
+.book-of-day figure img{
+width: 240px;
+height: 240px;
+}
+.book-of-day{
+  flex-direction: column;
+}
+  header nav  {
+    padding:1.2em 0;
+  }
+  header nav ul {
+    gap: 2px ;
+  }
+
+  main{
+    padding-left: 1em;
+    display: unset;
+    flex-direction: column;
+  }
+  main .left-area,
+  main .right-area{
+    margin: unset !important;
+
+  }
+  .logo{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  header .logo-text{
+    background-color: rebeccapurple;
+  display: none;
+  }
+
+  .book-list {
+    gap: 5px;
+  }
+  .book-list .book{
+
+width: 180px;   
+  }
+  
+  .to-top{
+    top: -10px;
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  
+.jumbotron .left-area{
+  margin-bottom: 1em;
+}
+.jumbotron{
+  margin-top: 11%;
+  padding:20px 20px;
+  flex-direction: column;
+}
+/* RIGHT AREA */
+
+.right-area .popular-list{
+  background-color: unset;
+}
+.right-area h3{
+  font-size: 1em;
+}
+.right-area{
+gap: 1em;
+}
+main .right-area .popular-list {
+padding-left: 1em;
+margin-top: unset;
+}
+
+main .right-area .popular-list .list{
+  border: unset !important;
+  margin-bottom: unset;
+}
+
+
+main .right-area .list figure 
+{
+  display: none !important;
+}
+main .right-area
+{
+  margin-left: 2em;
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding-left: 1em;
+width: 100%;
+}
+footer ul{
+ justify-content: center;
+ align-items: center; 
+}
+.copyright{
+  font-size: 12px;
+}
+
+}
+@media screen and (max-width:567px){
+  
+  .navigation-container ul a{
+    font-size: 12px !important;
+}
+main {
+  padding-left: unset;
+
+}
+main .left-area{
+  padding-left: .5em;
+}
+main .book-list-container .book-list{
+  justify-content: center;
+  display: flex;
+}
+.popular-container 
+{
+  padding: unset;
+  margin: unset;
+}
+.popular-container .title-container a i{
+  font-size: 2em !important;
+}
+.popular-container .title-container span{
+  display: none !important;
+}
+.popular-container .title-container {
+display: flex;
+gap: 1px;
+}
+.right-area .title-container *{
+  font-size: 13px !important;
+}
+}
+@media screen and (max-width:350px){
+  .right-area{
+    flex-wrap: wrap;
+  }
+}
